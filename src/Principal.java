@@ -66,13 +66,13 @@ public class Principal
     {
         if (nLibros < biblioteca.length)
         {
-            System.out.print("Introduce el título del libro: ");
+            System.out.println("Introduce el título del libro: ");
             String titulo = Utils.sc.nextLine();
 
-            System.out.print("\nIntroduce el nombre del autor: ");
+            System.out.println("Introduce el nombre del autor: ");
             String autor =Utils.sc.nextLine();
 
-            System.out.print("\nIntroduce el ISBN: ");
+            System.out.println("Introduce el ISBN: ");
             String isbn = Utils.sc.nextLine();
 
             biblioteca[nLibros] = new Libro(titulo, autor, isbn);
@@ -120,15 +120,16 @@ public class Principal
 
     private static void CambiaIsbn()
     {
-        System.out.print("Dime el nuevo ISBN del libro: ");
-        String newIsbn = Utils.sc.nextLine();
-
         System.out.print("Dime en qué posición está en la biblioteca");
         int posicion = Utils.validaInt();
 
+        Utils.sc.nextLine();
+
+        System.out.print("Dime el nuevo ISBN del libro: ");
+        String newIsbn = Utils.sc.nextLine();
+
+
         if (posicion>=0 && posicion<nLibros) biblioteca[posicion].setIsbn(newIsbn);
-        libro.compruebaIsbn10(newIsbn);
-        libro.compruebaIsbn13(newIsbn);
     }
 
 }

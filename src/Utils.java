@@ -8,6 +8,7 @@ public class Utils
         while (!sc.hasNextInt())
         {
             System.out.println("Por favor introduzca un número válido");
+            sc.next();
         }
 
         return sc.nextInt();
