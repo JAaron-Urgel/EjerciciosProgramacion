@@ -91,11 +91,14 @@ public class Principal
 
     private static void CambiaTitulo()
     {
-        System.out.print("Dime el nuevo título para el libro: ");
-        String tituloNuevo = Utils.sc.nextLine();
-
+        Visualiza();
         System.out.print("Dime en qué posición está en la biblioteca: ");
         int posicion = Utils.validaInt();
+
+        Utils.sc.nextLine();
+
+        System.out.print("Dime el nuevo título para el libro: ");
+        String tituloNuevo = Utils.sc.nextLine();
 
         if (posicion>=0 && posicion<nLibros)
         {
@@ -107,11 +110,14 @@ public class Principal
 
     private static void CambiaAutor()
     {
-        System.out.print("Dime quién es el nuevo autor del libro: ");
-        String autorNuevo = Utils.sc.nextLine();
-
+        Visualiza();
         System.out.print("Dime en qué posición está en la biblioteca: ");
         int posicion = Utils.validaInt();
+
+        Utils.sc.nextLine();
+
+        System.out.print("Dime quién es el nuevo autor del libro: ");
+        String autorNuevo = Utils.sc.nextLine();
 
         if (posicion>=0 && posicion<nLibros) biblioteca[posicion].setAutor(autorNuevo);
 
@@ -120,6 +126,7 @@ public class Principal
 
     private static void CambiaIsbn()
     {
+        Visualiza();
         System.out.print("Dime en qué posición está en la biblioteca");
         int posicion = Utils.validaInt();
 

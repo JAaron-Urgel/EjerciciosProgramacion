@@ -1,16 +1,37 @@
+import java.time.LocalDate;
+
 public class Libro {
     private String titulo;
     private String autor;
     private String isbn;
+    private int anyoPublicacion;
 
     public Libro(String titulo, String autor, String isbn) {
         setTitulo(titulo);
         setAutor(autor);
         setIsbn(isbn);
+        this.anyoPublicacion = LocalDate.now().getYear();
+    }
+
+    public Libro(String titulo, String autor, String isbn, int anyoPublicacion) {
+        setTitulo(titulo);
+        setAutor(autor);
+        setIsbn(isbn);
+        setAnyoPublicacion(anyoPublicacion);
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public int getAnyoPublicacion() {
+        return anyoPublicacion;
+    }
+
+    public void setAnyoPublicacion(int anyoPublicacion) {
+        if (anyoPublicacion> LocalDate.now().getYear()) System.err.println("ERROR AÑO DE PUBLICACIÓN NO VÁLIDO");
+
+        else this.anyoPublicacion = anyoPublicacion;
     }
 
     public void setTitulo(String titulo) {
