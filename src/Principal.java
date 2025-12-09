@@ -7,6 +7,7 @@ public class Principal
     static Libro[] biblioteca;
     static int nLibros = 0;
     static final int KMaxBiblio = 10;
+    static String message = "Elige una opción";
     static void main()
     {
 
@@ -28,7 +29,8 @@ public class Principal
             System.out.println("5. Cambiar ISBN");
             System.out.println("Saliendo...");
 
-            opcion = Utils.validaInt();
+
+            opcion = Utils.validaInt(message);
             Utils.sc.nextLine();
 
             switch (opcion)
@@ -93,7 +95,7 @@ public class Principal
     {
         Visualiza();
         System.out.print("Dime en qué posición está en la biblioteca: ");
-        int posicion = Utils.validaInt();
+        int posicion = Utils.validaInt(message);
 
         Utils.sc.nextLine();
 
@@ -112,7 +114,7 @@ public class Principal
     {
         Visualiza();
         System.out.print("Dime en qué posición está en la biblioteca: ");
-        int posicion = Utils.validaInt();
+        int posicion = Utils.validaInt(message);
 
         Utils.sc.nextLine();
 
@@ -128,7 +130,7 @@ public class Principal
     {
         Visualiza();
         System.out.print("Dime en qué posición está en la biblioteca");
-        int posicion = Utils.validaInt();
+        int posicion = Utils.validaInt(message);
 
         Utils.sc.nextLine();
 

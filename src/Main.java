@@ -2,17 +2,15 @@ import java.util.Scanner;
 
 public class Main
 {
-    static Scanner teclado = new Scanner(System.in);
     static Libro libro;
     static void main() {
         System.out.print("Introduce el título del libro ");
-        String title = teclado.nextLine();
-
+        String title = Utils.sc.nextLine();
         System.out.print("\nDime el autor del libro: ");
-        String autor = teclado.nextLine();
+        String autor = Utils.sc.nextLine();
 
         System.out.print("\nIntroduce el ISBN del libro: ");
-        String isbn = teclado.nextLine();
+        String isbn = Utils.sc.nextLine();
 
         libro  = new Libro(title, autor, isbn);
 
@@ -31,10 +29,10 @@ public class Main
             System.out.println("Modificar ISBN");
             System.out.println("Salida");
 
-            System.out.println("Elige una opción");
+            String message = "Elige una opción";
 
-            opcion = teclado.nextInt();
-            teclado.nextLine();
+            opcion = Utils.validaInt(message);
+            Utils.sc.nextLine();
 
             switch (opcion)
             {
@@ -44,17 +42,17 @@ public class Main
 
                 case 2:
                     System.out.print("Nuevo título: ");
-                    libro.setTitulo(teclado.nextLine());
+                    libro.setTitulo(Utils.sc.nextLine());
                     break;
 
                 case 3:
                     System.out.print("Nuevo autor: ");
-                    libro.setAutor(teclado.nextLine());
+                    libro.setAutor(Utils.sc.nextLine());
                     break;
 
                 case 4:
                     System.out.println("Nuevo ISBN: ");
-                    libro.setIsbn(teclado.nextLine());
+                    libro.setIsbn(Utils.sc.nextLine());
                     break;
 
                 case 5:
