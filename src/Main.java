@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main
 {
+    static String message = "Elige una opción";
     static Libro libro;
     static void main() {
         System.out.print("Introduce el título del libro ");
@@ -28,8 +29,6 @@ public class Main
             System.out.println("Modificar autor");
             System.out.println("Modificar ISBN");
             System.out.println("Salida");
-
-            String message = "Elige una opción";
 
             opcion = Utils.validaInt(message);
             Utils.sc.nextLine();
