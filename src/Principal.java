@@ -1,6 +1,3 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-
 public class Principal
 {
     static Libro libro;
@@ -27,6 +24,7 @@ public class Principal
             System.out.println("3. Cambiar título");
             System.out.println("4. Cambiar Autor");
             System.out.println("5. Cambiar ISBN");
+            System.out.println("6. Ordenar títulos");
             System.out.println("Saliendo...");
 
 
@@ -53,6 +51,10 @@ public class Principal
 
                 case 5:
                     CambiaIsbn();
+                    break;
+
+                case 6:
+                    burbuja();
                     break;
 
                 default:
@@ -141,4 +143,27 @@ public class Principal
         if (posicion>=0 && posicion<nLibros) biblioteca[posicion].setIsbn(newIsbn);
     }
 
+    private static void burbuja()
+    {
+        int contadorIntercambios = 0;
+        boolean ordenado = false;
+
+        while (!ordenado) {
+            for (int i = 0; i < biblioteca.length; i++)
+            {
+                if (biblioteca[i]>0){
+                    Libro aux= (biblioteca[i]);
+                    biblioteca[i] = biblioteca[i+1];
+                    biblioteca[i+1] = aux;
+
+                    contadorIntercambios++;
+                }
+            }
+
+            if (contadorIntercambios==0)    ordenado=true;
+
+
+            contadorIntercambios = 0;
+        }
+    }
 }
